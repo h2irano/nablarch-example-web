@@ -85,6 +85,9 @@
   <!-- ハンドラキュー構成 -->
   <component name="webFrontController"
              class="nablarch.fw.web.servlet.WebFrontController">
+    <!-- HTTPセッションの誤生成を検知する -->
+    <property name="preventSessionCreation" value="true" />
+    
     <property name="handlerQueue">
       <list>
         <component class="nablarch.fw.web.handler.HttpCharacterEncodingHandler"/>
