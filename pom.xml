@@ -253,6 +253,36 @@
     </resources>
     <plugins>
       <plugin>
+        <groupId>com.google.cloud.tools</groupId>
+        <artifactId>jib-maven-plugin</artifactId>
+        <version>2.1.0</version>
+        <configuration>
+          <from>
+            <image>tomcat:9.0.31-jdk11-adoptopenjdk-hotspot</image>
+          </from>
+          <to>
+            <image>${project.artifactId}</image>
+            <tags>
+              <tag>latest</tag>
+              <tag>${project.version}</tag>
+            </tags>
+          </to>
+          <container>
+            <appRoot>/usr/local/tomcat/webapps/ROOT</appRoot>
+            <ports>
+              <port>8080</port>
+            </ports>
+            <environment>
+              <NABLARCH_FILEPATHSETTING_BASEPATHSETTINGS_UPLOADFILETMPDIR>file:/var/tmp/upload</NABLARCH_FILEPATHSETTING_BASEPATHSETTINGS_UPLOADFILETMPDIR>
+              <NABLARCH_FILEPATHSETTING_BASEPATHSETTINGS_OUTPUT>file:/var/nablarch/output</NABLARCH_FILEPATHSETTING_BASEPATHSETTINGS_OUTPUT>
+              <NABLARCH_FILEPATHSETTING_BASEPATHSETTINGS_FORMAT>file:/var/nablarch/format</NABLARCH_FILEPATHSETTING_BASEPATHSETTINGS_FORMAT>
+              <JAVA_OPTS>-Duser.language=ja</JAVA_OPTS>
+            </environment>
+          </container>
+        </configuration>
+      </plugin>
+
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.6.2</version>
