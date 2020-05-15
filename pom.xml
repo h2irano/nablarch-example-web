@@ -258,7 +258,8 @@
         <version>2.1.0</version>
         <configuration>
           <from>
-            <image>tomcat:9.0.31-jdk11-adoptopenjdk-hotspot</image>
+            <!-- https://hub.docker.com/layers/tomcat/library/tomcat/9.0.35-jdk11-adoptopenjdk-hotspot/images/sha256-db47e1f18920a4eb73efc4af0154bb2d849570332c12bc508c2e739c3ca127a0?context=explore -->
+            <image>tomcat@sha256:db47e1f18920a4eb73efc4af0154bb2d849570332c12bc508c2e739c3ca127a0</image>
           </from>
           <to>
             <image>${project.artifactId}</image>
